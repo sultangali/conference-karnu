@@ -1,0 +1,56 @@
+% =====================================================================
+% IMPORTANT FOR AUTHORS:
+% Please use ONLY the commands and environments
+% provided in this template.
+% Do NOT load additional packages and do NOT redefine commands.
+%
+% In particular:
+% - use \author, \affiliation, \BuketovTitle, \Buketovmaketitle
+% - use \begin{definition}, \begin{theorem}, etc., if needed
+% - use \cite{} and \bibitem{} for references
+%
+% Adding custom packages or macros may cause compilation errors
+% when assembling the proceedings.
+%
+% The maximum length of the abstract is 1 printed page.
+% =====================================================================
+
+
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{buketov_mit}
+
+\begin{document}
+\selectlanguage{english}
+
+\author{Surname}{N.}{1}
+\author{Surname}{N.}{2}
+
+\BuketovTitle{Title}
+
+\affiliation{Affiliation, City, Country}{1}
+\affiliation{Affiliation, City, Country}{2}
+
+\mail{email@domain.com}
+
+\Buketovmaketitle
+
+
+\begin{definition}
+Text of the definition.
+\end{definition}
+
+\KeyWords{3--10 key words.}
+
+\Funding{This research was funded by Grant AP00000000.}
+
+\begin{thebibliography}{9}
+% Book
+\bibitem{cite1} Surname, I.~O. (year). \textit{Title of the source}. Publisher.
+
+% Journal article
+\bibitem{cite2} Surname, I.~O. (year). Title of the source.
+\textit{Journal}, \textit{Volume}(Issue), 123--145.
+\end{thebibliography}
+
+\end{document}

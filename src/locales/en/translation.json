@@ -1,0 +1,173 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "sections": "Sections",
+    "committee": "Committee",
+    "documents": "Documents",
+    "contacts": "Contacts",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "admin": "Admin Panel",
+    "moderator": "Moderation",
+    "logout": "Logout"
+  },
+  "home": {
+    "title": "International Scientific Conference",
+    "subtitle": "\"Fundamental and Applied Issues in Mathematics, Mechanics, and Computer Science\"",
+    "dedicated": "Dedicated to the 70th Anniversary of Professor A.R. Yeshkeyev",
+    "date": "June 3-4, 2026",
+    "location": "Karaganda, Kazakhstan",
+    "registerBtn": "Register",
+    "learnMore": "Learn More",
+    "organizer": "Organizer",
+    "organizerName": "Buketov Karaganda National Research University",
+    "format": "Conference Format",
+    "formatDesc": "The conference will be held in a hybrid in-person and online format using videoconferencing."
+  },
+  "sections": {
+    "title": "Conference Sections",
+    "section1": "Algebra, Mathematical Logic, and Geometry",
+    "section2": "Function Theory and Functional Analysis",
+    "section3": "Differential Equations and Their Applications",
+    "section4": "Current Issues in Education and Translation of Scientific Terminology",
+    "section5": "Applied Mechanics and Robotics",
+    "section6": "Information Technology, Artificial Intelligence, and Machine Learning"
+  },
+  "dates": {
+    "title": "Important Dates",
+    "registration": "Pre-registration and abstract submission",
+    "registrationDate": "May 15, 2026",
+    "confirmation": "Confirmation of paper inclusion",
+    "confirmationDate": "May 25, 2026",
+    "arrival": "Arrival date",
+    "arrivalDate": "June 3, 2026",
+    "conference": "Conference",
+    "conferenceDate": "June 3-4, 2026",
+    "departure": "Departure date",
+    "departureDate": "June 4, 2026"
+  },
+  "fees": {
+    "title": "Registration Fee",
+    "regular": "Participants",
+    "regularAmount": "20,000 tenge (40 USD)",
+    "student": "Master's and doctoral students",
+    "studentAmount": "10,000 tenge (20 USD)",
+    "note": "The registration fee is paid upon registration"
+  },
+  "documents": {
+    "title": "Documents",
+    "infoLetter": "Information Letter",
+    "template": "Paper Template",
+    "download": "Download",
+    "templates": "LaTeX Templates",
+    "googleFormRegistration": "Registration"
+  },
+  "committee": {
+    "title": "Program Committee",
+    "orgTitle": "Organizing Committee",
+    "chairman": "Chairman",
+    "coChairman": "Co-chairman"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "addressText": "Buketov Karaganda National Research University, Faculty of Mathematics and Information Technology"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Registration",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "name": "Full name",
+    "organization": "Organization",
+    "country": "Country",
+    "phone": "Phone",
+    "section": "Section",
+    "selectSection": "Select section",
+    "participationType": "Participation type",
+    "online": "Online",
+    "offline": "In-person",
+    "loginBtn": "Login",
+    "registerBtn": "Register",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "forgotPassword": "Forgot password?",
+    "verifyEmail": "Please verify your email for full access to features"
+  },
+  "profile": {
+    "title": "Personal Cabinet",
+    "info": "Personal Information",
+    "submissions": "My Submissions",
+    "newSubmission": "Upload Paper",
+    "noSubmissions": "You have no uploaded papers yet",
+    "editProfile": "Edit Profile",
+    "verified": "Verified",
+    "notVerified": "Not verified"
+  },
+  "submission": {
+    "title": "Paper Title",
+    "coAuthors": "Co-authors",
+    "abstract": "Abstract",
+    "keywords": "Keywords",
+    "file": "Paper File",
+    "section": "Section",
+    "status": "Status",
+    "feedback": "Reviewer Comment",
+    "submit": "Submit",
+    "update": "Update",
+    "delete": "Delete",
+    "download": "Download",
+    "pending": "Under Review",
+    "approved": "Approved",
+    "revision": "Revision Required",
+    "rejected": "Rejected",
+    "uploadHint": "PDF, DOC, DOCX or TEX (max. 10MB)"
+  },
+  "moderator": {
+    "title": "Moderator Panel",
+    "allSubmissions": "All Submissions",
+    "filter": "Filter",
+    "all": "All",
+    "approve": "Approve",
+    "requestRevision": "Request Revision",
+    "reject": "Reject",
+    "addFeedback": "Add Feedback",
+    "viewFile": "View File",
+    "stats": "Statistics"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "users": "Users",
+    "totalUsers": "Total Users",
+    "verifiedUsers": "Verified",
+    "totalSubmissions": "Total Submissions",
+    "changeRole": "Change Role",
+    "deleteUser": "Delete User",
+    "sendEmail": "Send Email",
+    "user": "User",
+    "moderatorRole": "Moderator",
+    "adminRole": "Administrator"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "actions": "Actions",
+    "confirmDelete": "Are you sure you want to delete?"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "university": "Buketov Karaganda National Research University"
+  }
+}
