@@ -17,19 +17,19 @@ const DocumentsPage = () => {
   }, []);
 
   const infoLetters = [
-    { lang: 'kz', name: 'Қазақша', file: '/documents/kz/info_letter_kz.docx', flag: '' },
-    { lang: 'ru', name: 'Русский', file: '/documents/ru/info_letter_ru.docx', flag: '' },
-    { lang: 'en', name: 'English', file: '/documents/en/info_letter_en.docx', flag: '' },
+    { lang: 'kz', name: 'Қазақша', file: '/documents/kz/Бірінші ақпараттық хат 2026.pdf', flag: '' },
+    { lang: 'ru', name: 'Русский', file: '/documents/ru/Первое информационное письмо 2026 г. .pdf', flag: '' },
+    { lang: 'en', name: 'English', file: '/documents/en/First Information Letter 2026 .pdf', flag: '' },
   ];
 
-  const latexTemplates = [
-    { lang: 'kz', name: 'Қазақша', file: '/documents/templates/latex_kz.tex', flag: '' },
-    { lang: 'ru', name: 'Русский', file: '/documents/templates/latex_ru.tex', flag: '' },
-    { lang: 'en', name: 'English', file: '/documents/templates/latex_en.tex', flag: '' },
+  const docxTemplates = [
+    { lang: 'kz', name: 'Қазақша', file: '/submissions/Шаблон (каз).docx', flag: '' },
+    { lang: 'ru', name: 'Русский', file: '/submissions/Шаблон (рус).docx', flag: '' },
+    { lang: 'en', name: 'English', file: '/submissions/Шаблон (англ).docx', flag: '' },
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-gray-50">
+    <div className="min-h-screen py-20 bg-gray-50 mt-10">
       <div className="container-professional">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -46,7 +46,7 @@ const DocumentsPage = () => {
           </p>
         </div>
 
-        {/* Info Letters (DOCX) */}
+        {/* Info Letters (PDF) */}
         <section className="mb-20">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-cobalt-blue mb-2 flex items-center justify-center gap-3">
@@ -54,7 +54,7 @@ const DocumentsPage = () => {
               {t('documents.infoLetter')}
             </h2>
             <p className="text-gray-600 text-sm">
-              {i18n.language === 'kz' ? 'DOCX форматында' : i18n.language === 'en' ? 'DOCX format' : 'Формат DOCX'}
+              {i18n.language === 'kz' ? 'PDF форматында' : i18n.language === 'en' ? 'PDF format' : 'Формат PDF'}
             </p>
           </div>
           
@@ -62,7 +62,7 @@ const DocumentsPage = () => {
             {infoLetters.map((letter) => (
               <a
                 key={letter.lang}
-                href={letter.file}
+                href={encodeURI(letter.file)}
                 download
                 className="card hover:shadow-elevated transition-all hover:border-brilliant-azure border-2 border-transparent"
               >
@@ -103,7 +103,7 @@ const DocumentsPage = () => {
           </div> */}
         </section>
 
-        {/* LaTeX templates (.tex) — 3 languages */}
+        {/* DOCX templates — 3 languages */}
         <section className="mb-20">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-cobalt-blue mb-2 flex items-center justify-center gap-3">
@@ -111,22 +111,22 @@ const DocumentsPage = () => {
               {t('documents.templates')}
             </h2>
             <p className="text-gray-600 text-sm">
-              LaTeX (.tex) — {i18n.language === 'kz' ? 'үш тілде' : i18n.language === 'en' ? 'in three languages' : 'на трёх языках'}
+              DOCX — {i18n.language === 'kz' ? 'үш тілде' : i18n.language === 'en' ? 'in three languages' : 'на трёх языках'}
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {latexTemplates.map((template) => (
+            {docxTemplates.map((template) => (
               <a
                 key={template.lang}
-                href={template.file}
+                href={encodeURI(template.file)}
                 download
                 className="card hover:shadow-elevated transition-all hover:border-cool-sky border-2 border-transparent"
               >
                 <div className="text-center">
                   <div className="mb-4">
                     <span className="px-3 py-1 bg-cool-sky text-white text-xs font-bold rounded-full uppercase">
-                      .tex
+                      .docx
                     </span>
                   </div>
                   <div className="text-4xl mb-4">{template.flag}</div>
@@ -134,7 +134,7 @@ const DocumentsPage = () => {
                     <FiFile className="text-cool-sky" size={28} />
                   </div>
                   <h3 className="text-xl font-bold text-cobalt-blue mb-2">{template.name}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">LaTeX {t('documents.template')}</p>
+                  <p className="text-gray-600 mb-4 text-sm">{t('documents.template')} DOCX</p>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-cool-sky text-white font-semibold rounded-lg hover:bg-brilliant-azure transition-colors">
                     <FiDownload size={16} />
                     <span>{t('documents.download')}</span>

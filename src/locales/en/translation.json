@@ -5,6 +5,8 @@
     "sections": "Sections",
     "committee": "Committee",
     "documents": "Documents",
+    "program": "Program",
+    "conference": "Conference",
     "contacts": "Contacts",
     "login": "Login",
     "register": "Register",
@@ -16,7 +18,7 @@
   "home": {
     "title": "International Scientific Conference",
     "subtitle": "\"Fundamental and Applied Issues in Mathematics, Mechanics, and Computer Science\"",
-    "dedicated": "Dedicated to the 70th Anniversary of Professor A.R. Yeshkeyev",
+    "dedicated": "Dedicated to the 70th Anniversary of Doctor of Physical and Mathematical Sciences, Professor Aibat Rafhatuly Yeshkeyev",
     "date": "June 3-4, 2026",
     "location": "Karaganda, Kazakhstan",
     "registerBtn": "Register",
@@ -61,7 +63,7 @@
     "infoLetter": "Information Letter",
     "template": "Paper Template",
     "download": "Download",
-    "templates": "LaTeX Templates",
+    "templates": "DOCX Templates",
     "googleFormRegistration": "Registration"
   },
   "committee": {
@@ -164,7 +166,8 @@
     "view": "View",
     "search": "Search",
     "actions": "Actions",
-    "confirmDelete": "Are you sure you want to delete?"
+    "confirmDelete": "Are you sure you want to delete?",
+    "comingSoon": "Coming soon..."
   },
   "footer": {
     "rights": "All rights reserved",

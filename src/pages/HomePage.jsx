@@ -26,7 +26,7 @@ const HomePage = () => {
   return (
     <div className="bg-white">
       {/* Professional Hero Section */}
-      <section className="gradient-header text-white py-24 md:py-32">
+      <section className="gradient-header text-white py-24 md:py-32 mt-20">
         <div className="container-professional">
           <div className="max-w-4xl mx-auto text-center fade-in">
             {/* KZ: badge → title. RU/EN: title → badge */}
@@ -34,7 +34,7 @@ const HomePage = () => {
               <>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 mb-8">
                   <FiAward className="text-alice-blue" size={18} />
-                  <span className="text-sm font-medium">{t('home.dedicated')}</span>
+                  <span className="text-sm font-medium">{t('home.dedicated')},</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   {t('home.title')}
@@ -43,7 +43,7 @@ const HomePage = () => {
             ) : (
               <>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  {t('home.title')}
+                  {t('home.title')},
                 </h1>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 mb-8">
                   <FiAward className="text-alice-blue" size={18} />
@@ -102,6 +102,17 @@ const HomePage = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               {t('home.formatDesc')}
             </p>
+            <div className="mt-8 flex items-center justify-center">
+              <div className="bg-white/60 p-4 rounded-xl shadow-card border border-brilliant-azure/30 max-w-fit mx-auto">
+                <span className="text-base md:text-lg font-semibold text-cobalt-blue">
+                  {i18n.language === 'kz'
+                    ? 'Конференцияның жұмыс тілдері: қазақ, орыс, ағылшын.'
+                    : i18n.language === 'en'
+                    ? 'Working languages of the conference: Kazakh, Russian, English.'
+                    : 'Рабочие языки конференции: казахский, русский, английский.'}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -197,25 +208,38 @@ const HomePage = () => {
               </div>
             </div>
             
-            {/* Student Fee */}
-            <div className="card-bordered text-center border-2 border-brilliant-azure">
+            {/* Student Fee (Custom Text) */}
+            <div className="card-bordered text-center border-2 border-brilliant-azure relative">
               <div className="absolute top-4 right-4">
-                <span className="px-3 py-1 bg-brilliant-azure text-white text-xs font-bold rounded-full uppercase">
+                {/* <span className="px-3 py-1 bg-brilliant-azure text-white text-xs font-bold rounded-full uppercase">
                   {i18n.language === 'en' ? 'Special' : 'Скидка'}
-                </span>
+                </span> */}
               </div>
               <div className="w-16 h-16 mx-auto mb-6 rounded-lg bg-brilliant-azure flex items-center justify-center">
                 <FiAward className="text-white" size={32} />
               </div>
               <h3 className="text-xl font-bold text-cobalt-blue mb-3">
-                {t('fees.student')}
+                {i18n.language === 'kz'
+                  ? 'Бакалавриат, магистратура және докторантура студенттері'
+                  : i18n.language === 'en'
+                  ? "Students, master's and doctoral students"
+                  : 'Студенты, магистранты и докторанты'}
               </h3>
               <div className="mb-4">
                 <span className="text-4xl font-bold text-brilliant-azure">
-                  {t('fees.studentAmount').split(' ')[0]}
+                  10&nbsp;000
                 </span>
-                <span className="text-gray-600 ml-2">{t('fees.studentAmount').split(' ').slice(1).join(' ')}</span>
+                <span className="text-gray-600 ml-2">{i18n.language === 'en' ? 'tenge (20 USD)' : 'тенге (20 USD)'}</span>
               </div>
+              {/* <div className="mt-2 text-gray-600 text-sm">
+                {
+                  i18n.language === 'kz'
+                    ? 'Бакалавриат, магистратура және докторантура студенттері үшін ақы 10 000 теңге (20 USD).'
+                    : i18n.language === 'en'
+                      ? 'For students, master\'s and doctoral students, the fee is 10,000 tenge (20 USD).'
+                      : 'Для студентов, магистрантов и докторантов - 10000 тенге (20 USD).'
+                }
+              </div> */}
             </div>
           </div>
           
@@ -288,38 +312,104 @@ const HomePage = () => {
                     {i18n.language === 'kz' ? 'Комитет мүшелері:' : i18n.language === 'en' ? 'Committee members:' : 'Члены комитета:'}
                   </strong>
                   <div className="pt-1 text-gray-700 leading-relaxed space-y-1">
-                  {[
-                    'акад. АН РТ М.М. Арсланов (Россия, Казань)',
-                    'проф. А.Т. Асанова',
-                    'акад. НАН РК Б.С. Байжанов',
-                    'проф. Н.А. Бокаев',
-                    'проф. В. В. Вербовский',
-                    'проф. М. Т. Дженалиев',
-                    'акад. НАН РК А.С. Джумадильдаев',
-                    'проф. Б.Е. Кангужин',
-                    'проф. Н. Х. Касымов (Узбекистан, Ташкент)',
-                    'акад. НАН РК Т.Ш. Кальменов',
-                    'акад. НАН РК Б.Ш. Кулпешов',
-                    'проф. Крис Ласковски (США, Колледж-Парк)',
-                    'проф. А. С. Морозов (Россия, Новосибирск)',
-                    'проф. А. М. Нуракунов (Кыргызстан, Бишкек)',
-                    'проф. Е.Д. Нурсултанов',
-                    'проф. Е. Нурхайдаров (США, Пенсильвания)',
-                    'акад. НАН РК. Р.О. Ойнаров',
-                    'акад. НАН РК М.О. Отелбаев',
-                    'проф. А.В. Псху (Россия, Нальчик)',
-                    'проф. М.И. Рамазанов',
-                    'акад. НАН РК М.А. Садыбеков',
-                    'проф. А.А. Степанова (Россия, Владивосток)',
-                    'проф. С.В. Судоплатов (Россия, Новосибирск)',
-                    'акад. РАН И.А. Тайманов (Россия, Новосибирск)',
-                    'проф. Д.А. Тусупов',
-                    'акад. НАН РК У.У. Умирбаев (США, Детройт)',
-                    'проф. Франк Вагнер (Франция, Лион)',
-                    'проф. Б.И. Зильбер (Великобритания, Оксфорд)',
-                  ].map((member, idx) => (
-                    <div key={idx}>{member}</div>
-                  ))}
+                  {i18n.language === 'kz' ? (
+                    [
+                      'Татарстан Республикасы Ғылым академиясының академигі М.М. Арсланов (Ресей, Қазан)',
+                      'проф. А. Т. Асанова',
+                      'ҚР ҰҒА академигі Б.С. Байжанов',
+                      'проф. Н. А. Бокаев',
+                      'проф. М. Т. Дженалиев',
+                      'ҚР ҰҒА академигі А. С. Джумадильдаев',
+                      'проф. Б.Е. Кангужин',
+                      'проф. Н. Х. Касымов (Өзбекстан, Ташкент)',
+                      'ҚР ҰҒА академигі Т.Ш. Кальменов',
+                      'ҚР ҰҒА академигі Б. Ш. Кулпешов',
+                      'проф. Крис Ласковски (АҚШ, Колледж-Парк)',
+                      'проф. А. С. Морозов (Ресей, Новосибирск)',
+                      'проф. А. М. Нуракунов (Қырғызстан, Бішкек)',
+                      'проф. Е.Д. Нурсултанов',
+                      'проф. Е. Нурхайдаров (Пенсильвания, АҚШ)',
+                      'ҚР ҰҒА академигі Р.О. Ойнаров',
+                      'ҚР ҰҒА академигі М. О. Отелбаев',
+                      'проф. А.В. Псху (Ресей, Нальчик)',
+                      'проф. М. И. Рамазанов',
+                      'ҚР ҰҒА академигі М.А. Садыбеков',
+                      'проф. А.А. Степанова (Ресей, Владивосток)',
+                      'проф. С. В. Судоплатов (Ресей, Новосибирск)',
+                      'РҒА академигі И.А. Тайманов (Ресей, Новосибирск)',
+                      'проф. Д. А. Тусупов',
+                      'ҚР ҰҒА академигі У.У. Умирбаев (АҚШ, Детройт)',
+                      'проф. Франк Вагнер (Франция, Лион)',
+                      'проф. Б.И. Зильбер (Ұлыбритания, Оксфорд)',
+                    ].map((member, idx) => (
+                      <div key={idx}>{member}</div>
+                    ))
+                  ) : i18n.language === 'en' ? (
+                    [
+                      'Acad. of the Academy of Sciences of the Republic of Tatarstan M.M. Arslanov',
+                      'Prof. A.T. Assanova',
+                      'Acad. of the National Academy of Sciences of the Republic of Kazakhstan B.S. Baizhanov',
+                      'Prof. N.A. Bokayev',
+                      'Prof. M.T. Jenaliyev',
+                      'Acad. of the National Academy of Sciences of the Republic of Kazakhstan A.S. Dzhumadildaev',
+                      'Prof. B.E. Kanguzhin',
+                      'Prof. N. Kh. Kasymov (Uzbekistan, Tashkent)',
+                      'Acad. of the National Academy of Sciences of the Republic of Kazakhstan T. Sh. Kalmenov',
+                      'acad. of the National Academy of Sciences of the Republic of Kazakhstan B.Sh. Kulpeshov',
+                      'Prof. Chris Laskowski (USA, College Park)',
+                      'Prof. A.S. Morozov (Russia, Novosibirsk)',
+                      'Prof. A.M. Nurakunov (Kyrgyzstan, Bishkek)',
+                      'Prof. E.D. Nursultanov',
+                      'Prof. E. Nurkhaydarov (USA, Pennsylvania)',
+                      'Acad. of the National Academy of Sciences of the Republic of Kazakhstan R.O. Oinarov',
+                      'Acad. of the National Academy of Sciences of the Republic of Kazakhstan M.O. Otelbayev',
+                      'Prof. A.V. Pskhu (Russia, Nalchik)',
+                      'Prof. M.I. Ramazanov',
+                      'Acad. of the National Academy of Sciences of the Republic of Kazakhstan M.A. Sadybekov',
+                      'Prof. A.A. Stepanova',
+                      'Prof. S.V. Sudoplatov',
+                      'Acad. of the Russian Academy of Sciences I.A. Taimanov',
+                      'Prof. J.A. Tusupov',
+                      'Acad. of the National Academy of Sciences of the Republic of Kazakhstan U.U. Umirbayev',
+                      'Prof. Frank Wagner',
+                      'Prof. B.I. Zilber',
+                    ].map((member, idx) => (
+                      <div key={idx}>{member}</div>
+                    ))
+                  ) : (
+                    [
+                      'акад. АН РТ М.М. Арсланов (Россия, Казань)',
+                      'проф. А.Т. Асанова',
+                      'акад. НАН РК Б.С. Байжанов',
+                      'проф. Н.А. Бокаев',
+                      'проф. М.Т. Дженалиев',
+                      'акад. НАН РК А.С. Джумадильдаев',
+                      'проф. Б.Е. Кангужин',
+                      'проф. Н.Х. Касымов (Узбекистан, Ташкент)',
+                      'акад. НАН РК Т.Ш. Кальменов',
+                      'акад. НАН РК Б.Ш. Кулпешов',
+                      'проф. Крис Ласковски (США, Колледж-Парк)',
+                      'проф. А.С. Морозов (Россия, Новосибирск)',
+                      'проф. А.М. Нуракунов (Кыргызстан, Бишкек)',
+                      'проф. Е.Д. Нурсултанов',
+                      'проф. Е. Нурхайдаров (США, Пенсильвания)',
+                      'акад. НАН РК Р.О. Ойнаров',
+                      'акад. НАН РК М.О. Отелбаев',
+                      'проф. А.В. Псху (Россия, Нальчик)',
+                      'проф. М.И. Рамазанов',
+                      'акад. НАН РК М.А. Садыбеков',
+                      'проф. А.А. Степанова (Россия, Владивосток)',
+                      'проф. С.В. Судоплатов (Россия, Новосибирск)',
+                      'акад. РАН И.А. Тайманов (Россия, Новосибирск)',
+                      'проф. Д.А. Тусупов',
+                      'акад. НАН РК У.У. Умирбаев (США, Детройт)',
+                      'проф. Франк Вагнер (Франция, Лион)',
+                      'проф. Б.И. Зильбер (Великобритания, Оксфорд)',
+                    ].map((member, idx) => (
+                      <div key={idx}>{member}</div>
+                    ))
+                  )}
+                   
                   </div>
                 </div>
               </div>
@@ -375,18 +465,111 @@ const HomePage = () => {
                         ? 'Deputy Dean for Science, Faculty of MandIT S.K. Zhumagulova'
                         : 'Зам. декана по науке С.К. Жумагулова'}
                     </li>
-                    <li>У.А. Косыбаева</li>
-                    <li>Ж.М. Тулеутаева</li>
-                    <li>Р.А. Кайыров</li>
-                    <li>Н.В. Попова</li>
-                    <li>М.Т. Касыметова</li>
-                    <li>О.И. Ульбрихт</li>
-                    <li>Г.Е. Жумабекова</li>
-                    <li>А.К. Исаева</li>
-                    <li>М.Т. Омарова</li>
-                    <li>Н.М. Мусина</li>
-                    <li>И.О. Тунгушбаева</li>
-                    <li>А.Р. Яруллина</li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'У.А. Косыбаева'
+                        : i18n.language === 'en'
+                        ? 'U.A. Kosybaeva'
+                        : 'У.А. Косыбаева'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'Ж.М. Тулеутаева'
+                        : i18n.language === 'en'
+                        ? 'Zh.M. Tuleutayeva'
+                        : 'Ж.М. Тулеутаева'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'Р.А. Кайыров'
+                        : i18n.language === 'en'
+                        ? 'R.A. Kaiyrov'
+                        : 'Р.А. Кайыров'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'Н.В. Попова'
+                        : i18n.language === 'en'
+                        ? 'N.V. Popova'
+                        : 'Н.В. Попова'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'М.Т. Касыметова'
+                        : i18n.language === 'en'
+                        ? 'M.T. Kasymetova'
+                        : 'М.Т. Касыметова'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'О.И. Ульбрихт'
+                        : i18n.language === 'en'
+                        ? 'O.I. Ulbricht'
+                        : 'О.И. Ульбрихт'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'Г.Е. Жумабекова'
+                        : i18n.language === 'en'
+                        ? 'G.E. Zhumabekova'
+                        : 'Г.Е. Жумабекова'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'А.К. Исаева'
+                        : i18n.language === 'en'
+                        ? 'A.K. Isaeva'
+                        : 'А.К. Исаева'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'М.Т. Омаров'
+                        : i18n.language === 'en'
+                        ? 'M.T. Omarov'
+                        : 'М.Т. Омаров'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'С.С. Копбалина'
+                        : i18n.language === 'en'
+                        ? 'S.S. Kopbalina'
+                        : 'С.С. Копбалина'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'С.К. Жумагалиев'
+                        : i18n.language === 'en'
+                        ? 'S.K. Zhumagaliyev'
+                        : 'С.К. Жумагалиев'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'М.Т. Омаров'
+                        : i18n.language === 'en'
+                        ? 'M.T. Omarov'
+                        : 'М.Т. Омаров'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'Н.М. Мусина'
+                        : i18n.language === 'en'
+                        ? 'N.M. Musina'
+                        : 'Н.М. Мусина'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'И.О. Тунгушбаева'
+                        : i18n.language === 'en'
+                        ? 'I.O. Tungushbaeva'
+                        : 'И.О. Тунгушбаева'}
+                    </li>
+                    <li>
+                      {i18n.language === 'kz'
+                        ? 'А.Р. Яруллина'
+                        : i18n.language === 'en'
+                        ? 'A.R. Yarullina'
+                        : 'А.Р. Яруллина'}
+                    </li>
                   </ul>
                 </div>
               </div>

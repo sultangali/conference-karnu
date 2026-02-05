@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { FiMail, FiPhone, FiMapPin, FiExternalLink, FiCalendar } from 'react-icons/fi';
 
 const Footer = () => {
-  const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
 
+  const currentYear = new Date().getFullYear();
+  const { t, i18n } = useTranslation();
   return (
     <footer className="bg-cobalt-blue text-white">
       <div className="container-professional py-16">
@@ -13,11 +13,23 @@ const Footer = () => {
           {/* Logo & Description */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
-            <div className="w-16 h-16 rounded-lg flex items-center justify-center shadow-card group-hover:shadow-elevated transition-shadow overflow-hidden bg-cobalt-blue p-2">
+            <div className="w-32 h-32 rounded-lg flex items-center justify-center shadow-card group-hover:shadow-elevated transition-shadow overflow-hidden bg-cobalt-blue p-2">
               <img src="/assets/logo.png" alt="КарНИУ" className="w-full h-full object-contain" />
             </div>
               <div>
-                <span className="font-bold text-xl block leading-tight">КарНИУ</span>
+                <span className="font-bold text-l block leading-tight">
+                  {(() => {
+                    switch (i18n.language) {
+                      case 'en':
+                        return 'Karaganda National Research University named after academician Ye.A. Buketov';
+                      case 'kz':
+                        return 'Академик Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университеті';
+                      case 'ru':
+                      default:
+                        return 'Карагандинский национальный исследовательский университет имени академика Е.А. Букетова';
+                    }
+                  })()}
+                </span>
                 <span className="text-alice-blue text-sm">Конференция 2026</span>
               </div>
             </div>
@@ -48,7 +60,19 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mr-3 group-hover:bg-white/20 transition-colors">
                   <FiPhone size={18} />
                 </div>
-                <span className="text-sm">+7 775 151 03 36 (Мусина Н.М.)</span>
+                <span className="text-sm">+7 775 151 03 36 &nbsp; {
+                  (() => {
+                switch (i18n.language) {
+                  case 'en':
+                    return 'Mussina Nazerke Mukhtaramkyzy';
+                  case 'kz':
+                    return 'Мусина Назерке Мухтарамкызы';
+                  case 'ru':
+                  default:
+                    return 'Мусина Назерке Мухтарамкызы';
+                }
+                })()
+                  }</span>
               </a>
               <div className="flex items-start text-alice-blue">
                 <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mr-3 flex-shrink-0">

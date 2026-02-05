@@ -7,7 +7,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 import { REGISTRATION_FORM_URL } from '../constants';
 
 const Navbar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { user, logout, isAdmin, isModerator } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,6 +34,8 @@ const Navbar = () => {
     { path: '/#sections', label: t('nav.sections'), isHash: true },
     { path: '/#committee', label: t('nav.committee'), isHash: true },
     { path: '/documents', label: t('nav.documents') },
+    { path: '/program', label: t('nav.program') },
+    { path: '/conference', label: t('nav.conference') },
     { path: '/#contacts', label: t('nav.contacts'), isHash: true },
   ];
 
@@ -58,15 +60,29 @@ const Navbar = () => {
         : 'bg-white border-b border-gray-100'
     }`}>
       <div className="container-professional">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-32">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-16 h-16 rounded-lg flex items-center justify-center shadow-card group-hover:shadow-elevated transition-shadow overflow-hidden bg-cobalt-blue p-2">
+          <Link 
+            to="/" 
+            className="flex items-center space-x-3 group max-w-xs"
+            style={{ maxWidth: "360px" }} // указываем максимум размер ширины кнопки логотипа
+          >
+            <div  className="w-32  rounded-lg flex items-center justify-center shadow-card group-hover:shadow-elevated transition-shadow overflow-hidden bg-cobalt-blue p-2">
               <img src="/assets/logo.png" alt="КарНИУ" className="w-full h-full object-contain" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-lg text-cobalt-blue block leading-tight">
-                КарНИУ
+              <span className="font-bold text-xs text-cobalt-blue block leading-tight">
+                {(() => {
+                  switch (i18n.language) {
+                    case 'en':
+                      return 'Karaganda National Research University named after academician Ye.A. Buketov';
+                    case 'kz':
+                      return 'Академик Е.А. Бөкетов атындағы Қарағанды ұлттық зерттеу университеті';
+                    case 'ru':
+                    default:
+                      return 'Карагандинский национальный исследовательский университет имени академика Е.А. Букетова';
+                  }
+                })()}
               </span>
               <span className="text-xs text-brilliant-azure font-semibold">
                 Конференция 2026

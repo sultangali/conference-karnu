@@ -12,10 +12,9 @@ documents/
 │   └── info_letter_ru.docx
 ├── en/
 │   └── info_letter_en.docx
-└── templates/
-    ├── latex_kz.tex              # LaTeX на трёх языках
-    ├── latex_ru.tex
-    └── latex_en.tex
+└── templates/                    # (не используется; шаблоны — в submissions/)
 ```
+
+Шаблоны тезисов (DOCX) лежат в **client/public/submissions/**: Шаблон (каз).docx, Шаблон (рус).docx, Шаблон (англ).docx.
 
 Положите файлы в **client/public/documents/** — при сборке они попадут в `dist/documents/`.
