@@ -44,6 +44,15 @@ const Footer = () => {
               {t('contacts.title')}
             </h3>
             <div className="space-y-4">
+            <a 
+                href="mailto:MiT@buketov.edu.kz" 
+                className="flex items-center text-alice-blue hover:text-white transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mr-3 group-hover:bg-white/20 transition-colors">
+                  <FiMail size={18} />
+                </div>
+                <span className="text-sm">MiT@buketov.edu.kz</span>
+              </a>
               <a 
                 href="mailto:conf.karaganda.2026@mail.ru" 
                 className="flex items-center text-alice-blue hover:text-white transition-colors group"

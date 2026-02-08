@@ -104,9 +104,9 @@ server {
         add_header Cache-Control "public, immutable";
     }
 
-    # Documents folder
+    # Documents folder: serve real files (PDF etc.), SPA route /documents → index.html (no trailing slash redirect)
     location /documents {
-        try_files $uri $uri/ =404;
+        try_files $uri /index.html;
     }
 
     # Assets folder

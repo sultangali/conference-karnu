@@ -34,13 +34,23 @@ const HomePage = () => {
               <>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 mb-8">
                   <FiAward className="text-alice-blue" size={18} />
-                  <span className="text-sm font-medium">{t('home.dedicated')},</span>
+                  <span className="text-sm font-medium">{t('home.dedicated')}</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   {t('home.title')}
                 </h1>
               </>
-            ) : (
+            ) : i18n.language === 'en' ? (
+              <>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  {t('home.title')}
+                </h1>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30 mb-8">
+                  <FiAward className="text-alice-blue" size={18} />
+                  <span className="text-sm font-medium">{t('home.dedicated')}</span>
+                </div>
+              </>
+            ) : i18n.language === 'ru' ?  (
               <>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   {t('home.title')},
@@ -50,7 +60,7 @@ const HomePage = () => {
                   <span className="text-sm font-medium">{t('home.dedicated')}</span>
                 </div>
               </>
-            )}
+            ) : null}
             
             {/* Subtitle */}
             <div className="mb-8">
